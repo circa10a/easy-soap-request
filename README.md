@@ -25,12 +25,8 @@ const headers = {
 };
 const xml = fs.readFileSync('tests/zipCodeEnvelope.xml', 'utf-8');
 
-//usage of the library
-const sample = async () => {
-  const response = await soapRequest(url, headers, xml);  //that's it
-  console.log(response);
-};
-
-//invoke
-sample()
+//usage of module
+await soapRequest(url, headers, xml).then((response) => {
+  console.log(response)
+});
 ```
