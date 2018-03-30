@@ -1,4 +1,8 @@
 # easy-soap-request
+[![Build Status](https://travis-ci.org/circa10a/easy-soap-request.svg?branch=master)](https://travis-ci.org/circa10a/easy-soap-request)
+
+[![NPM](https://nodei.co/npm/easy-soap-request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easy-soap-request)
+
 A small library to make SOAP requests easier
 
 ### Installation
