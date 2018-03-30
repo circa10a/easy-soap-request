@@ -5,18 +5,19 @@
 
 A small library to make SOAP requests easier
 
-### Installation
-Using npm
+## Installation
+
 ```bash
 npm install easy-soap-request
 ```
 
-In Node.js
+## Usage
+
 ```javascript
 const soapRequest = require('easy-soap-request');
 const fs = require('fs');
 
-//example data
+// example data
 const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
 const headers = {
   'user-agent': 'node.js',
@@ -25,8 +26,12 @@ const headers = {
 };
 const xml = fs.readFileSync('tests/zipCodeEnvelope.xml', 'utf-8');
 
-//usage of module
-await soapRequest(url, headers, xml).then((response) => {
+// usage of module
+const example = async () => {
+  const response = await soapRequest(url, headers, xml);
   console.log(response);
-});
+};
+
+// invoke
+example();
 ```
