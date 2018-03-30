@@ -27,6 +27,6 @@ const xml = fs.readFileSync('tests/zipCodeEnvelope.xml', 'utf-8');
 
 //usage of module
 await soapRequest(url, headers, xml).then((response) => {
-  console.log(response)
+  console.log(response);
 });
 ```
