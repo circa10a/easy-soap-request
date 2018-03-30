@@ -1,3 +1,9 @@
+#mac
+.DS_Store
+
+# Mochawesome
+mochawesome-report
+
 # Logs
 logs
 *.log

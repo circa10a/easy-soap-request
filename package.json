@@ -1,0 +1,42 @@
+{
+  "name": "easy-soap-request",
+  "version": "0.0.1",
+  "description": "A small library to make SOAP requests easier",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf node_modules/ mochawesome-report/",
+    "lint": "./node_modules/.bin/eslint **/*.js",
+    "lint-fix": "./node_modules/.bin/eslint **/*.js --fix",
+    "test": "./node_modules/.bin/mocha tests/*.js --reporter mochawesome"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/circa10a/easy-soap-request.git"
+  },
+  "keywords": [
+    "SOAP",
+    "http",
+    "request",
+    "xml",
+    "post"
+  ],
+  "author": "Caleb Lemoine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/circa10a/easy-soap-request/issues"
+  },
+  "homepage": "https://github.com/circa10a/easy-soap-request#readme",
+  "dependencies": {
+    "request": "^2.85.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-chai-friendly": "^0.4.1",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-mocha": "^5.0.0",
+    "mocha": "^5.0.5",
+    "mochawesome": "^3.0.2"
+  }
+}

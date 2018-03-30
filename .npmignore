@@ -1,0 +1,26 @@
+# https://docs.npmjs.com/misc/developers#keeping-files-out-of-your-package
+
+#mac
+.DS_Store
+
+#tests
+test
+tests
+coverage
+
+#build tools
+.travis.yml
+.jenkins.yml
+.codeclimate.yml
+
+#linters
+.jscsrc
+.jshintrc
+.eslintrc*
+
+#editor settings
+.idea
+.editorconfig
+
+#output
+mochawesome-report
