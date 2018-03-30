@@ -21,8 +21,8 @@ const fs = require('fs');
 const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
 const headers = {
   'user-agent': 'node.js',
-  SOAPAction: 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
   'Content-Type': 'text/xml;charset=UTF-8',
+  'SOAPAction': 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
 };
 const xml = fs.readFileSync('tests/zipCodeEnvelope.xml', 'utf-8');
 
