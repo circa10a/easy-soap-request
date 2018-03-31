@@ -5,6 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/easy-soap-request.svg?style=flat-square)](https://npm-stat.com/charts.html?package=easy-soap-request&from=2018-03-29)
 [![Dependencies status](https://img.shields.io/david/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request#info=dependencies)
 [![Dev Dependencies status](https://img.shields.io/david/dev/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request?type=dev)
+[![Known Vulnerabilities](https://snyk.io/test/github/circa10a/easy-soap-request/badge.svg?style=flat-square)](https://snyk.io/test/github/circa10a/easy-soap-request?targetFile=package.json)
 [![license](https://img.shields.io/npm/l/easy-soap-request.svg?style=flat-square)]((http://opensource.org/licenses/MIT))
 
 [![NPM](https://nodei.co/npm/easy-soap-request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easy-soap-request)
