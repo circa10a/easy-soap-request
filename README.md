@@ -1,5 +1,11 @@
 # easy-soap-request
-[![Build Status](https://travis-ci.org/circa10a/easy-soap-request.svg?branch=master)](https://travis-ci.org/circa10a/easy-soap-request)
+
+![Travis](https://img.shields.io/travis/circa10a/easy-soap-request.svg?style=flat-square)
+![npm version](https://img.shields.io/npm/v/easy-soap-request.svg?style=flat-square)
+![npm downloads](https://img.shields.io/npm/dm/easy-soap-request.svg?style=flat-square)
+[![Dependencies status](https://img.shields.io/david/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request#info=dependencies)
+[![Dev Dependencies status](https://img.shields.io/david/dev/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request#info=devDependencies)
+![license](https://img.shields.io/npm/l/easy-soap-request.svg?style=flat-square)
 
 [![NPM](https://nodei.co/npm/easy-soap-request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easy-soap-request)
 
