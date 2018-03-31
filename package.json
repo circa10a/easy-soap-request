@@ -1,13 +1,13 @@
 {
   "name": "easy-soap-request",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules/ mochawesome-report/",
     "lint": "./node_modules/.bin/eslint **/*.js",
     "lint-fix": "./node_modules/.bin/eslint **/*.js --fix",
-    "test": "./node_modules/.bin/mocha tests/*.js --reporter mochawesome"
+    "test": "./node_modules/.bin/mocha --timeout 20000 --reporter mochawesome"
   },
   "repository": {
     "type": "git",
