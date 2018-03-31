@@ -1,11 +1,11 @@
 # easy-soap-request
 
-![Travis](https://img.shields.io/travis/circa10a/easy-soap-request.svg?style=flat-square)
-![npm version](https://img.shields.io/npm/v/easy-soap-request.svg?style=flat-square)
-![npm downloads](https://img.shields.io/npm/dm/easy-soap-request.svg?style=flat-square)
+[![Travis](https://img.shields.io/travis/circa10a/easy-soap-request.svg?style=flat-square)](https://travis-ci.org/circa10a/easy-soap-request)
+[![npm version](https://img.shields.io/npm/v/easy-soap-request.svg?style=flat-square)](https://www.npmjs.com/package/easy-soap-request)
+[![npm downloads](https://img.shields.io/npm/dm/easy-soap-request.svg?style=flat-square)](https://npm-stat.com/charts.html?package=easy-soap-request&from=2018-03-29)
 [![Dependencies status](https://img.shields.io/david/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request#info=dependencies)
-[![Dev Dependencies status](https://img.shields.io/david/dev/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request#info=devDependencies)
-![license](https://img.shields.io/npm/l/easy-soap-request.svg?style=flat-square)
+[![Dev Dependencies status](https://img.shields.io/david/dev/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request?type=dev)
+[![license](https://img.shields.io/npm/l/easy-soap-request.svg?style=flat-square)]((http://opensource.org/licenses/MIT))
 
 [![NPM](https://nodei.co/npm/easy-soap-request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easy-soap-request)
 
