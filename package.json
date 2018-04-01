@@ -1,6 +1,6 @@
 {
   "name": "easy-soap-request",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
@@ -14,12 +14,15 @@
     "url": "git+https://github.com/circa10a/easy-soap-request.git"
   },
   "keywords": [
-    "SOAP",
+    "soap",
     "http",
     "request",
     "xml",
-    "post"
+    "wsdl"
   ],
+  "engines" : { 
+    "node" : ">=7.6.0" 
+  },
   "author": "Caleb Lemoine",
   "license": "MIT",
   "bugs": {

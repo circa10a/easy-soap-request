@@ -18,6 +18,9 @@ A small library to make SOAP requests easier
 npm install easy-soap-request
 ```
 
+## Requirements
+  - Node.js >=7.6.0 (async/await support)
+
 ## Usage
 
 ```javascript
@@ -42,3 +45,7 @@ const example = async () => {
 // invoke
 example();
 ```
+
+## Tests
+
+* [Example](https://github.com/circa10a/easy-soap-request/tree/master/test)
