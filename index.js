@@ -3,10 +3,13 @@ const request = require('request');
 
 /**
  * @author Caleb Lemoine
- * @param {string} url - endpoint URL
- * @param {string} headers - HTTP headers, can be string or object
- * @param {string} xml - SOAP envelope, can be read from file or passed as string
- * @returns {string} - Returns body of reponse
+ * @param {string} url endpoint URL
+ * @param {string} headers  HTTP headers, can be string or object
+ * @param {string} xml SOAP envelope, can be read from file or passed as string
+ * @promise response
+ * @reject {error}
+ * @fulfill {body,statusCode}
+ * @returns {Promise.response{body,statusCode}}
  */
 module.exports = async function soapRequest(url, headers, xml) {
   return new Promise((resolve, reject) => {
@@ -19,7 +22,12 @@ module.exports = async function soapRequest(url, headers, xml) {
         if (error) {
           reject(error);
         } else {
-          resolve(body);
+          resolve({
+            response: {
+              body,
+              statusCode: response.statusCode,
+            },
+          });
         }
       });
   });
