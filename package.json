@@ -4,7 +4,7 @@
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf node_modules/ mochawesome-report/",
+    "clean": "rm -rf node_modules/",
     "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint **/*.js",
     "lint-fix": "./node_modules/.bin/eslint **/*.js --fix",
