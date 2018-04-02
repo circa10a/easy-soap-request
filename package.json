@@ -1,13 +1,14 @@
 {
   "name": "easy-soap-request",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf node_modules/ mochawesome-report/",
+    "clean": "rm -rf node_modules/",
+    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint **/*.js",
     "lint-fix": "./node_modules/.bin/eslint **/*.js --fix",
-    "test": "./node_modules/.bin/mocha --timeout 20000 --reporter mochawesome"
+    "test": "./node_modules/.bin/nyc node_modules/.bin/_mocha"
   },
   "repository": {
     "type": "git",
@@ -20,8 +21,8 @@
     "xml",
     "wsdl"
   ],
-  "engines" : { 
-    "node" : ">=7.6.0" 
+  "engines": {
+    "node": ">=7.6.0"
   },
   "author": "Caleb Lemoine",
   "license": "MIT",
@@ -34,12 +35,13 @@
   },
   "devDependencies": {
     "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
     "eslint-plugin-import": "^2.10.0",
     "eslint-plugin-mocha": "^5.0.0",
     "mocha": "^5.0.5",
-    "mochawesome": "^3.0.2"
+    "nyc": "^11.6.0"
   }
 }

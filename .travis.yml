@@ -1,5 +1,5 @@
-language: node_js
 sudo: false
+language: node_js
 node_js:
   - node
 before_install:
@@ -9,7 +9,11 @@ install:
 script:
   - npm run lint
   - npm test
+after_script:
+  - npm run coverage
 deploy:
+  on:
+      branch: master
   provider: npm
-  email: "CalebLemoine@gmail.com"
+  email: CalebLemoine@gmail.com
   api_key: $npmToken
