@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 const soapRequest = require('../index');
 const fs = require('fs');
 const { expect } = require('chai');

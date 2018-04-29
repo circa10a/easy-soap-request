@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const request = require('request');
 
 /**
@@ -11,7 +10,7 @@ const request = require('request');
  * @fulfill {body,statusCode}
  * @returns {Promise.response{body,statusCode}}
  */
-module.exports = async function soapRequest(url, headers, xml) {
+module.exports = function soapRequest(url, headers, xml) {
   return new Promise((resolve, reject) => {
     request
       .post({
