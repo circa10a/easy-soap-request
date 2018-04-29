@@ -24,8 +24,6 @@ npm install easy-soap-request
 ## Usage
 
 ```javascript
- #!/usr/bin/env node
-
 const soapRequest = require('easy-soap-request');
 const fs = require('fs');
 
@@ -40,9 +38,10 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
 
 // usage of module
 const example = async () => {
-  const { response } = await soapRequest(url, headers, xml);
-  console.log(response.body);
-  console.log(response.statusCode);
+  const response = await soapRequest(url, headers, xml);
+  const { body, statusCode } = response;
+  console.log(body);
+  console.log(statusCode);
 };
 
 // invoke

@@ -24,3 +24,4 @@ coverage
 
 #output
 mochawesome-report
+.nyc_output
