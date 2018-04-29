@@ -14,14 +14,14 @@ const xmlFail = fs.readFileSync('test/zipCodeEnvelopeFail.xml', 'utf-8');
 describe('Test Longitude/Latitude SOAP Request', () => {
   const coordinates = '32.9612,-96.8372';
   it(`Zip Code 75001 should return ${coordinates}`, async () => {
-    const response = await soapRequest(url, headers, xml);
+    const { response } = await soapRequest(url, headers, xml);
     const { body, statusCode } = response;
     expect(body).to.include(coordinates);
     expect(statusCode).to.be.equal(200);
   });
   it('Should catch Promise Rejection', async () => {
     try {
-      const response = await soapRequest('fail', headers, xmlFail);
+      const { response } = await soapRequest('fail', headers, xmlFail);
       const { statusCode } = response;
       expect(statusCode).to.not.be.equal(200);
     } catch (e) {
