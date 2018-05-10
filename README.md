@@ -37,15 +37,12 @@ const headers = {
 const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
 
 // usage of module
-const example = async () => {
+(async () => {
   const { response } = await soapRequest(url, headers, xml);
   const { body, statusCode } = response;
   console.log(body);
   console.log(statusCode);
-};
-
-// invoke
-example();
+})();
 ```
 
 ## Tests
