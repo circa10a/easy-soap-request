@@ -12,22 +12,21 @@ const request = require('request');
  */
 module.exports = function soapRequest(url, headers, xml) {
   return new Promise((resolve, reject) => {
-    request
-      .post({
-        url,
-        headers,
-        body: xml,
-      }, (error, response, body) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve({
-            response: {
-              body,
-              statusCode: response.statusCode,
-            },
-          });
-        }
-      });
+    request.post({
+      url,
+      headers,
+      body: xml,
+    }, (error, response, body) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve({
+          response: {
+            body,
+            statusCode: response.statusCode,
+          },
+        });
+      }
+    });
   });
 };
