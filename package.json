@@ -1,6 +1,6 @@
 {
   "name": "easy-soap-request",
-  "version": "2.0.10",
+  "version": "2.1.0",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/circa10a/easy-soap-request#readme",
   "dependencies": {
-    "request": "^2.85.0"
+    "request": "^2.86.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",
