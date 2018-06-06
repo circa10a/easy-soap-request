@@ -1,6 +1,6 @@
 {
   "name": "easy-soap-request",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
@@ -42,6 +42,6 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-mocha": "^5.0.0",
     "mocha": "^5.2.0",
-    "nyc": "^11.9.0"
+    "nyc": "^12.0.2"
   }
 }
