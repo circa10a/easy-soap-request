@@ -1,6 +1,6 @@
-const soapRequest = require('../index');
 const fs = require('fs');
 const { expect } = require('chai');
+const soapRequest = require('../index');
 
 const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
 const headers = {
