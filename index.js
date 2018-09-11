@@ -1,4 +1,4 @@
-const request = require('request');
+const axios = require('axios');
 
 /**
  * @author Caleb Lemoine
@@ -12,21 +12,20 @@ const request = require('request');
  */
 module.exports = function soapRequest(url, headers, xml) {
   return new Promise((resolve, reject) => {
-    request.post({
+    axios({
+      method: 'post',
       url,
       headers,
-      body: xml,
-    }, (error, response, body) => {
-      if (error) {
-        reject(error);
-      } else {
-        resolve({
-          response: {
-            body,
-            statusCode: response.statusCode,
-          },
-        });
-      }
+      data: xml,
+    }).then((response) => {
+      resolve({
+        response: {
+          body: response.data,
+          statusCode: response.status,
+        },
+      });
+    }).catch((error) => {
+      reject(error);
     });
   });
 };
