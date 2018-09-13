@@ -21,7 +21,7 @@ describe('Test Longitude/Latitude SOAP Request', () => {
   });
   it('Should catch Promise Rejection', async () => {
     try {
-      const { response } = await soapRequest('fail', headers, xmlFail);
+      const { response } = await soapRequest(url, headers, xmlFail);
       const { statusCode } = response;
       expect(statusCode).to.not.be.equal(200);
     } catch (e) {

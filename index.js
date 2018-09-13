@@ -25,7 +25,7 @@ module.exports = function soapRequest(url, headers, xml) {
         },
       });
     }).catch((error) => {
-      reject(error);
+      reject(error.response.data.data);
     });
   });
 };
