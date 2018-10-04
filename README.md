@@ -23,7 +23,27 @@ npm install easy-soap-request
 
 ## Usage
 
-![](https://i.imgur.com/NF6ibD6.png)
+```js
+const soapRequest = require('easy-soap-request');
+const fs = require('fs');
+
+// example data
+const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
+const headers = {
+  'user-agent': 'sampleTest',
+  'Content-Type': 'text/xml;charset=UTF-8',
+  'soapAction': 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
+};
+const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
+
+// usage of module
+(async () => {
+  const { response } = await soapRequest(url, headers, xml);
+  const { body, statusCode } = response;
+  console.log(body);
+  console.log(statusCode);
+})();
+```
 
 ## Tests
 
