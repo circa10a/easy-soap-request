@@ -25,7 +25,8 @@ module.exports = function soapRequest(url, headers, xml) {
         },
       });
     }).catch((error) => {
-      reject(error.response.data.data);
+      console.log('SOAP FAIL: ' + error);
+      reject(error.response.data);
     });
   });
 };
