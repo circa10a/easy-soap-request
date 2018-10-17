@@ -3,6 +3,7 @@ const { expect } = require('chai');
 const soapRequest = require('../index');
 
 const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
+const urlFail = 'https://graphical.weather.gov:80/xml/SOAP_server/ndfdXMLserver.php';
 const headers = {
   'user-agent': 'easy-soap-request-test',
   'Content-Type': 'text/xml;charset=UTF-8',
@@ -22,6 +23,15 @@ describe('Test Longitude/Latitude SOAP Request', () => {
   it('Should catch Promise Rejection', async () => {
     try {
       const { response } = await soapRequest(url, headers, xmlFail);
+      const { statusCode } = response;
+      expect(statusCode).to.not.be.equal(200);
+    } catch (e) {
+      // Test promise rejection for coverage
+    }
+  });
+  it('Should catch connection error Promise Rejection', async () => {
+    try {
+      const { response } = await soapRequest(urlFail, headers, xmlFail, 1000);
       const { statusCode } = response;
       expect(statusCode).to.not.be.equal(200);
     } catch (e) {
