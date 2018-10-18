@@ -9,8 +9,8 @@ const headers = {
   'Content-Type': 'text/xml;charset=UTF-8',
   SOAPAction: 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
 };
-const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
-const xmlFail = fs.readFileSync('test/zipCodeEnvelopeFail.xml', 'utf-8');
+const xml = fs.readFileSync('test/zip-code-envelope.xml', 'utf-8');
+const xmlFail = fs.readFileSync('test/zip-code-envelope-fail.xml', 'utf-8');
 
 describe('Test Longitude/Latitude SOAP Request', () => {
   const coordinates = '32.9612,-96.8372';
