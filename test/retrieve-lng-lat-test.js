@@ -3,13 +3,14 @@ const { expect } = require('chai');
 const soapRequest = require('../index');
 
 const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
+const urlFail = 'https://graphical.weather.gov:80/xml/SOAP_server/ndfdXMLserver.php';
 const headers = {
   'user-agent': 'easy-soap-request-test',
   'Content-Type': 'text/xml;charset=UTF-8',
   SOAPAction: 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
 };
-const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
-const xmlFail = fs.readFileSync('test/zipCodeEnvelopeFail.xml', 'utf-8');
+const xml = fs.readFileSync('test/zip-code-envelope.xml', 'utf-8');
+const xmlFail = fs.readFileSync('test/zip-code-envelope-fail.xml', 'utf-8');
 
 describe('Test Longitude/Latitude SOAP Request', () => {
   const coordinates = '32.9612,-96.8372';
@@ -22,6 +23,15 @@ describe('Test Longitude/Latitude SOAP Request', () => {
   it('Should catch Promise Rejection', async () => {
     try {
       const { response } = await soapRequest(url, headers, xmlFail);
+      const { statusCode } = response;
+      expect(statusCode).to.not.be.equal(200);
+    } catch (e) {
+      // Test promise rejection for coverage
+    }
+  });
+  it('Should catch connection error Promise Rejection', async () => {
+    try {
+      const { response } = await soapRequest(urlFail, headers, xmlFail, 1000);
       const { statusCode } = response;
       expect(statusCode).to.not.be.equal(200);
     } catch (e) {
