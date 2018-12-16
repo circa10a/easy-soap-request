@@ -1,8 +1,11 @@
 {
   "name": "easy-soap-request",
-  "version": "2.3.3",
+  "version": "2.3.4",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
+  "files": [
+    "dist/"
+  ],
   "scripts": {
     "bundle": "./node_modules/.bin/webpack --config ./webpack.config.js",
     "clean": "rm -rf node_modules/",
