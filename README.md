@@ -10,7 +10,7 @@
 
 [![NPM](https://nodei.co/npm/easy-soap-request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easy-soap-request)
 
-A small library to make SOAP requests easier
+A small library to make SOAP requests easier via Node.js or in the browser
 
 ## Installation
 
@@ -22,6 +22,8 @@ npm install easy-soap-request
   - Node.js >=7.6.0 (async/await support)
 
 ## Usage
+
+### Node.js
 
 ```js
 const soapRequest = require('easy-soap-request');
@@ -43,6 +45,36 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
   console.log(body);
   console.log(statusCode);
 })();
+```
+
+### Browser
+
+> Note: CORS policies apply
+
+```html
+<html>
+<script src="https://cdn.jsdelivr.net/npm/easy-soap-request@2.3.1/dist/easy-soap-request.js"></script>
+<script>
+    const url = 'https://my-soap-server';
+    const headers = {
+        'Content-Type': 'text/xml;charset=UTF-8',
+        SOAPAction: 'https://my-soap-action/something',
+    };
+    const xml = `<soapenv:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+                 <soapenv:Header/>
+                 <soapenv:Body>Some Data</soapenv:Body>
+                 </soapenv:Envelope>`;
+    async function makeRequest() {
+        const { response } = await soapRequest(url, headers, xml, 1000); // Optional timeout parameter(milliseconds)
+        const { body, statusCode } = response;
+        console.log(body);
+        console.log(statusCode);
+        document.body.innerHTML = body;
+    };
+    makeRequest();
+</script>
+<body></body>
+</html>
 ```
 
 ## Tests
