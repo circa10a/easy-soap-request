@@ -28,10 +28,10 @@ module.exports = function soapRequest(url, headers, xml, timeout = 10000) {
       });
     }).catch((error) => {
       if (error.response) {
-        console.log(`SOAP FAIL: ${error}`);
+        console.error(`SOAP FAIL: ${error}`);
         reject(error.response.data);
       } else {
-        console.log(`SOAP FAIL: ${error}`);
+        console.error(`SOAP FAIL: ${error}`);
         reject(error);
       }
     });
