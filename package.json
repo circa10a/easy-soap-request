@@ -6,7 +6,7 @@
   "scripts": {
     "bundle": "./node_modules/.bin/webpack --config ./webpack.config.js",
     "clean": "rm -rf node_modules/",
-    "coverage": "./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
+    "coverage": "export NODE_ENV=test; ./node_modules/.bin/nyc report --reporter=text-lcov | ./node_modules/.bin/coveralls",
     "lint": "./node_modules/.bin/eslint '*.js' 'test/*.js'",
     "lint-fix": "./node_modules/.bin/eslint **/*.js --fix",
     "serve": "npm run bundle && ./node_modules/.bin/webpack-dev-server --config ./webpack.config.js",
