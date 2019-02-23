@@ -22,6 +22,7 @@ module.exports = function soapRequest(url, headers, xml, timeout = 10000) {
     }).then((response) => {
       resolve({
         response: {
+          headers: response.headers,
           body: response.data,
           statusCode: response.status,
         },
