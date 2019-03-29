@@ -1,4 +1,4 @@
-const axios = require('axios');
+const axios = require('axios-https-proxy-fix');
 
 /**
  * @author Caleb Lemoine
@@ -11,7 +11,7 @@ const axios = require('axios');
  * @fulfill {body,statusCode}
  * @returns {Promise.response{body,statusCode}}
  */
-module.exports = function soapRequest(url, headers, xml, timeout = 10000) {
+module.exports = function soapRequest(url, headers, xml, timeout = 10000, proxy = false) {
   return new Promise((resolve, reject) => {
     axios({
       method: 'post',
@@ -19,6 +19,7 @@ module.exports = function soapRequest(url, headers, xml, timeout = 10000) {
       headers,
       data: xml,
       timeout,
+      proxy,
     }).then((response) => {
       resolve({
         response: {

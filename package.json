@@ -33,7 +33,8 @@
   },
   "homepage": "https://github.com/circa10a/easy-soap-request#readme",
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "axios-https-proxy-fix": "^0.17.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
