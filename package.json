@@ -10,7 +10,9 @@
     "lint": "./node_modules/.bin/eslint '*.js' 'test/*.js'",
     "lint-fix": "./node_modules/.bin/eslint **/*.js --fix",
     "serve": "npm run bundle && ./node_modules/.bin/webpack-dev-server --config ./webpack.config.js",
-    "test": "./node_modules/.bin/nyc node_modules/.bin/_mocha"
+    "test": "./node_modules/.bin/nyc node_modules/.bin/_mocha",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -34,7 +36,8 @@
   "homepage": "https://github.com/circa10a/easy-soap-request#readme",
   "dependencies": {
     "axios": "^0.18.0",
-    "axios-https-proxy-fix": "^0.17.1"
+    "axios-https-proxy-fix": "^0.17.1",
+    "snyk": "^1.161.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -49,5 +52,6 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
-  }
+  },
+  "snyk": true
 }
