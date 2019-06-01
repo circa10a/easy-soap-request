@@ -6,6 +6,7 @@ const axios = require('axios-https-proxy-fix');
  * @param {string} headers  HTTP headers, can be string or object
  * @param {string} xml SOAP envelope, can be read from file or passed as string
  * @param {int} timeout Milliseconds before timing out request
+ * @param {object} proxy Object with proxy configuration
  * @promise response
  * @reject {error}
  * @fulfill {body,statusCode}
