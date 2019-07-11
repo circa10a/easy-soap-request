@@ -54,7 +54,7 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
 
 ```html
 <html>
-<script src="https://cdn.jsdelivr.net/npm/easy-soap-request@2.3.5/dist/easy-soap-request.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/easy-soap-request/dist/easy-soap-request.js"></script>
 <script>
     const url = 'https://my-soap-server';
     const headers = {
