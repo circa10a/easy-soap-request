@@ -1,6 +1,6 @@
 {
   "name": "easy-soap-request",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
