@@ -31,7 +31,7 @@ const fs = require('fs');
 
 // example data
 const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
-const headers = {
+const sampleHeaders = {
   'user-agent': 'sampleTest',
   'Content-Type': 'text/xml;charset=UTF-8',
   'soapAction': 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
@@ -40,7 +40,7 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
 
 // usage of module
 (async () => {
-  const { response } = await soapRequest({ url: url, headers: headers, xml: xml, timeout: 1000 }); // Optional timeout parameter(milliseconds)
+  const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml, timeout: 1000 }); // Optional timeout parameter(milliseconds)
   const { headers, body, statusCode } = response;
   console.log(headers);
   console.log(body);
@@ -57,7 +57,7 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
 <script src="https://cdn.jsdelivr.net/npm/easy-soap-request/dist/easy-soap-request.js"></script>
 <script>
     const url = 'https://my-soap-server';
-    const headers = {
+    const sampleHeaders = {
         'Content-Type': 'text/xml;charset=UTF-8',
         SOAPAction: 'https://my-soap-action/something',
     };
@@ -66,7 +66,7 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
                  <soapenv:Body>Some Data</soapenv:Body>
                  </soapenv:Envelope>`;
     async function makeRequest() {
-        const { response } = await soapRequest({ url: url, headers: headers, xml: xml, timeout: 1000 });
+        const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml, timeout: 1000 });
         const { headers, body, statusCode } = response;
         console.log(headers);
         console.log(body);
