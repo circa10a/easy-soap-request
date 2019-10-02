@@ -15,14 +15,14 @@ const xmlFail = fs.readFileSync('test/zip-code-envelope-fail.xml', 'utf-8');
 describe('Test Longitude/Latitude SOAP Request', () => {
   const coordinates = '32.9612,-96.8372';
   it(`Zip Code 75001 should return ${coordinates}`, async () => {
-    const { response } = await soapRequest(url, headers, xml);
+    const { response } = await soapRequest({ url, headers, xml });
     const { body, statusCode } = response;
     expect(body).to.include(coordinates);
     expect(statusCode).to.be.equal(200);
   });
   it('Should catch Promise Rejection', async () => {
     try {
-      const { response } = await soapRequest(url, headers, xmlFail);
+      const { response } = await soapRequest({ url, headers, xmlFail });
       const { statusCode } = response;
       expect(statusCode).to.not.be.equal(200);
     } catch (e) {
@@ -31,7 +31,12 @@ describe('Test Longitude/Latitude SOAP Request', () => {
   });
   it('Should catch connection error Promise Rejection', async () => {
     try {
-      const { response } = await soapRequest(urlFail, headers, xmlFail, 1000);
+      const { response } = await soapRequest({
+        url: urlFail,
+        headers,
+        xml: xmlFail,
+        timeout: 1000,
+      });
       const { statusCode } = response;
       expect(statusCode).to.not.be.equal(200);
     } catch (e) {
