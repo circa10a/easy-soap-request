@@ -40,7 +40,7 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
 
 // usage of module
 (async () => {
-  const { response } = await soapRequest(url, headers, xml, 1000); // Optional timeout parameter(milliseconds)
+  const { response } = await soapRequest({ url: url, headers: headers, xml: xml, timeout: 1000 }); // Optional timeout parameter(milliseconds)
   const { headers, body, statusCode } = response;
   console.log(headers);
   console.log(body);
@@ -66,7 +66,7 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
                  <soapenv:Body>Some Data</soapenv:Body>
                  </soapenv:Envelope>`;
     async function makeRequest() {
-        const { response } = await soapRequest(url, headers, xml, 1000); // Optional timeout parameter(milliseconds)
+        const { response } = await soapRequest({ url: url, headers: headers, xml: xml, timeout: 1000 });
         const { headers, body, statusCode } = response;
         console.log(headers);
         console.log(body);
@@ -78,6 +78,10 @@ const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
 <body></body>
 </html>
 ```
+
+## Changelog
+
+[Changelog.md](CHANGELOG.md)
 
 ## Tests
 
