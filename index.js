@@ -4,7 +4,7 @@ const axios = require('axios-https-proxy-fix');
  * @author Caleb Lemoine
  * @param {object} opts easy-soap-request options
  * @param {string} opts.url endpoint URL
- * @param {string} opts.headers  HTTP headers, can be string or object
+ * @param {object} opts.headers  HTTP headers, can be string or object
  * @param {string} opts.xml SOAP envelope, can be read from file or passed as string
  * @param {int} opts.timeout Milliseconds before timing out request
  * @param {object} opts.proxy Object with proxy configuration
