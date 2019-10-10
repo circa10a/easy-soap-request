@@ -6,7 +6,7 @@
 
 ## Fixed
 
-- #27
+- [#27](https://github.com/circa10a/easy-soap-request/issues/27)
 
 # 3.0.1(2019-10-02)
 
