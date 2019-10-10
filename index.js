@@ -28,6 +28,7 @@ module.exports = function soapRequest(opts = {
     xml,
     timeout,
     proxy,
+    maxContentLength,
   } = opts;
   return new Promise((resolve, reject) => {
     axios({
@@ -37,6 +38,7 @@ module.exports = function soapRequest(opts = {
       data: xml,
       timeout,
       proxy,
+      maxContentLength,
     }).then((response) => {
       resolve({
         response: {
