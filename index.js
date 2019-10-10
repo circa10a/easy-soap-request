@@ -8,6 +8,7 @@ const axios = require('axios-https-proxy-fix');
  * @param {string} opts.xml SOAP envelope, can be read from file or passed as string
  * @param {int} opts.timeout Milliseconds before timing out request
  * @param {object} opts.proxy Object with proxy configuration
+ * @param {int} opts.maxContentLength Limit content/body size being sent(bytes)
  * @promise response
  * @reject {error}
  * @fulfill {body,statusCode}
@@ -18,7 +19,8 @@ module.exports = function soapRequest(opts = {
   headers: {},
   xml: '',
   timeout: 10000,
-  proxy: false,
+  proxy: {},
+  maxContentLength: Infinity,
 }) {
   const {
     url,
