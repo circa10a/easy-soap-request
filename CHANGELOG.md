@@ -1,8 +1,9 @@
-# 3.0.2(2019-10-09)
+# 3.1.0(2019-10-09)
 
 ## Changed
 
 - Added `maxContentLength` parameter default of `Infinity`. See [axios docs](https://github.com/axios/axios#request-config)
+- Added `extraOpts` parameter that can be used to pass more config options for axios so a library update frequency is lower
 
 ## Fixed
 
