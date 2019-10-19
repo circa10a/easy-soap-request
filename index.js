@@ -1,4 +1,4 @@
-const axios = require('axios-https-proxy-fix');
+const axios = require('axios').default;
 
 /**
  * @author Caleb Lemoine
