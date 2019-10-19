@@ -1,3 +1,9 @@
+# 3.2.0 (2019-10-19)
+
+## Fixed 
+
+- [#29] (https://github.com/circa10a/easy-soap-request/issues/29)
+
 # 3.1.0(2019-10-09)
 
 ## Added
