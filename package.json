@@ -6,11 +6,11 @@
   "scripts": {
     "bundle": "webpack --config ./webpack.config.js",
     "clean": "rm -rf node_modules/",
-    "coverage": "export NODE_ENV=test; ./node_modules/.bin/nyc report --reporter=text-lcov | coveralls",
+    "coverage": "export NODE_ENV=test; nyc report --reporter=text-lcov | coveralls",
     "lint": "eslint '*.js' 'test/*.js'",
     "lint-fix": "eslint **/*.js --fix",
     "serve": "npm run bundle && webpack-dev-server --config ./webpack.config.js",
-    "test": "mocha"
+    "test": "nyc mocha"
   },
   "repository": {
     "type": "git",
