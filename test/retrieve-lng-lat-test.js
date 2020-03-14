@@ -35,7 +35,7 @@ describe('Test Longitude/Latitude SOAP Request', () => {
         url: urlFail,
         headers,
         xml: xmlFail,
-        timeout: 1000,
+        timeout: 100,
       });
       const { statusCode } = response;
       expect(statusCode).to.not.be.equal(200);
