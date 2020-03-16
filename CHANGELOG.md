@@ -1,3 +1,9 @@
+# 3.2.1 (2020-03-13)
+
+## Fixed 
+
+- [#32] (https://github.com/circa10a/easy-soap-request/pull/32)
+
 # 3.2.0 (2019-10-19)
 
 ## Fixed 
