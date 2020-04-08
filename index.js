@@ -48,8 +48,7 @@ module.exports = function soapRequest(opts = {
         response: {
           headers: response.headers,
           body: response.data,
-          statusCode: response.status,
-          
+            statusCode: response.status,
         },
       });
     }).catch((error) => {
