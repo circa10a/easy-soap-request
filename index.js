@@ -24,6 +24,7 @@ module.exports = function soapRequest(opts = {
   maxContentLength: Infinity,
   extraOpts: {},
 }) {
+  var method = "post";
   const {
     url,
     headers,
@@ -35,7 +36,7 @@ module.exports = function soapRequest(opts = {
   } = opts;
   return new Promise((resolve, reject) => {
     axios({
-      method: 'post',
+      method: method,
       url,
       headers,
       data: xml,
@@ -48,7 +49,7 @@ module.exports = function soapRequest(opts = {
         response: {
           headers: response.headers,
           body: response.data,
-            statusCode: response.status,
+          statusCode: response.status,
         },
       });
     }).catch((error) => {
