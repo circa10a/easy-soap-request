@@ -1,18 +1,39 @@
 sudo: false
+
 language: node_js
+
 node_js:
   - lts/*
+
 install:
-  - npm install
+  - npm ci
+
 script:
   - npm run lint
   - npm test
   - npm run coverage
   - npm run bundle
+
+before_deploy: |
+  if [  ! -f /tmp/tagged ]; then
+    git config --local user.name "$USERNAME"
+    git config --local user.email "$EMAIL"
+    export VERSION=$(grep version package.json | grep -o "[0-9]\.[0-9]\.[0-9]")
+    export TRAVIS_TAG=v${VERSION}
+    # Tag
+    git tag $TRAVIS_TAG && touch /tmp/tagged
+  fi
+
 deploy:
-  skip_cleanup: true
-  on:
+  - provider: npm
+    email: $EMAIL
+    api_key: $npmToken
+    skip_cleanup: true
+    on:
       branch: master
-  provider: npm
-  email: CalebLemoine@gmail.com
-  api_key: $npmToken
+  - provider: releases
+    api_key:
+      secure: t28GqBoT+RtZhP/IbD1uUBGDZcd9OMMunTbdpw6GA7Q2vZTZVRgKRKqo4Ws4piz98fKeUNAgjOcR0RFKrWoMjrXKT0OFcUt0R4xESFVaTisziYGavm76EpxXqamm5RJ1etE4SSbmJ1v9I8+QrPQa+8iuMchDbPJ5qvhyY/HWJ5z4ZtfxQYpVjtCpu/YTqxfz0QcfL2X2t0LQfCeoWa/BrOwMejlf2kUGc8Yzl4Gk1r/mbmpF31vAL61DTovth4v9FjLKmpL6SnyzeWakoZ0rliSzKVyeVkCkaCXoBbf9+l/N8Xr9uBxDFvuVH/R6YZaSUtu+bdpb8VfwdRoOF0ZLoZKR+n4HwPkJ1JW5u/RhIIjDvZYG0rR5AcBQIGXlHuYd/sfK++7f8DVQkV5fZds96Qx4A2pknh9cuejfou92L3+fhou6T/E2DENO5vzaQ2uEIWTDEtbPeEVfHjAn3AXooPcn4NotPq+XTevU4jGI3ETdqBbSpAh/gw/G2yQ9geGBD8e68fcsqKSURKgK/S/hgnxTFS1QE1Wvs6z/4BZsaz9U/SykbQfdlwqnJAuBQWvjAAbmP0TbcpKyucJVb5NJZzmQD4fJxY7wZ3NEGIdWZNiossYMWr6l8q/UjzyxuDOvobCSoWd3Wuzyp1iS68468j0ZJBfemotEjP9r4SC4fHM=
+    file: ''
+    on:
+      branch: master
