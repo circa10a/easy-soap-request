@@ -1,9 +1,9 @@
 # easy-soap-request
 
-[![Build Status](https://travis-ci.org/circa10a/easy-soap-request.svg?branch=master)](https://travis-ci.org/circa10a/easy-soap-request)
+[![Build Status](https://img.shields.io/travis/circa10a/easy-soap-request/master?style=flat-square)](https://travis-ci.org/circa10a/easy-soap-request)
 [![npm version](https://img.shields.io/npm/v/easy-soap-request.svg?style=flat-square)](https://www.npmjs.com/package/easy-soap-request)
 [![npm downloads](https://img.shields.io/npm/dm/easy-soap-request.svg?style=flat-square)](https://npm-stat.com/charts.html?package=easy-soap-request&from=2018-03-29)
-[![Buy Me A Coffee](https://img.shields.io/badge/BuyMeACoffee-Donate-ff813f.svg?logo=CoffeeScript&style=flat-square)](https://www.buymeacoffee.com/caleblemoine) 
+[![Buy Me A Coffee](https://img.shields.io/badge/BuyMeACoffee-Donate-ff813f.svg?logo=CoffeeScript&style=flat-square)](https://www.buymeacoffee.com/caleblemoine)
 [![Dependencies status](https://img.shields.io/david/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request#info=dependencies)
 [![Dev Dependencies status](https://img.shields.io/david/dev/circa10a/easy-soap-request.svg?style=flat-square)](https://david-dm.org/circa10a/easy-soap-request?type=dev)
 [![Known Vulnerabilities](https://snyk.io/test/github/circa10a/easy-soap-request/badge.svg?style=flat-square)](https://snyk.io/test/github/circa10a/easy-soap-request?targetFile=package.json)
