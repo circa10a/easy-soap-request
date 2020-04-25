@@ -10,5 +10,8 @@
   },
   "rules": {
     "quote-props": "warn"
+  },
+  "globals": {
+    "fetch": false
   }
 }

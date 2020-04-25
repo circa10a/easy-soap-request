@@ -11,7 +11,7 @@
 
 [![NPM](https://nodei.co/npm/easy-soap-request.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/easy-soap-request)
 
-A small library to make SOAP requests easier via Node.js or in the browser
+A small library to make SOAP requests easier via Node.js, Deno, and your browser
 
 ## Installation
 
@@ -37,11 +37,36 @@ const sampleHeaders = {
   'Content-Type': 'text/xml;charset=UTF-8',
   'soapAction': 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
 };
-const xml = fs.readFileSync('test/zipCodeEnvelope.xml', 'utf-8');
+const xml = fs.readFileSync('test/zip-code-envelope.xml', 'utf-8');
 
 // usage of module
 (async () => {
   const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml, timeout: 1000 }); // Optional timeout parameter(milliseconds)
+  const { headers, body, statusCode } = response;
+  console.log(headers);
+  console.log(body);
+  console.log(statusCode);
+})();
+```
+
+### Deno
+
+```js
+import soapRequest from 'https://raw.githubusercontent.com/circa10a/easy-soap-request/master/index.d.js';
+import { readFileStr } from 'https://deno.land/std/fs/mod.ts';
+
+// example data
+const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
+const sampleHeaders = {
+  'user-agent': 'sampleTest',
+  'Content-Type': 'text/xml;charset=UTF-8',
+  'soapAction': 'https://graphical.weather.gov/xml/DWMLgen/wsdl/ndfdXML.wsdl#LatLonListZipCode',
+};
+
+// usage of module
+(async () => {
+  const xml = await readFileStr('test/zip-code-envelope.xml');
+  const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml });
   const { headers, body, statusCode } = response;
   console.log(headers);
   console.log(body);
