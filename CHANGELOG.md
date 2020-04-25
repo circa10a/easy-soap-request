@@ -4,7 +4,7 @@
 
 ### Deno support
 
-- [#36] https://github.com/circa10a/easy-soap-request/issues/36)
+- [#36] (https://github.com/circa10a/easy-soap-request/issues/36)
 
 # 3.2.2(2020-04-08)
 
