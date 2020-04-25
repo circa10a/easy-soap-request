@@ -8,10 +8,12 @@
     "sourceType": "module",
     "ecmaVersion": 9
   },
+  "ignorePatterns": ["**/*.d.js"],
   "rules": {
     "quote-props": "warn"
   },
   "globals": {
-    "fetch": false
+    "fetch": false,
+    "Deno": false
   }
 }

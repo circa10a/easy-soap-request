@@ -7,10 +7,11 @@
     "bundle": "webpack --config ./webpack.config.js",
     "clean": "rm -rf node_modules/",
     "coverage": "export NODE_ENV=test; nyc report --reporter=text-lcov | coveralls",
-    "lint": "eslint '*.js' 'test/*.js'",
-    "lint-fix": "eslint **/*.js --fix",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix",
     "serve": "npm run bundle && webpack-dev-server --config ./webpack.config.js",
-    "test": "nyc mocha"
+    "test": "nyc mocha **/*test.js",
+    "test-deno": "docker run --rm -it -v $PWD:/tmp -w /tmp hayd/alpine-deno test --allow-read --allow-net test/*.d.js"
   },
   "repository": {
     "type": "git",

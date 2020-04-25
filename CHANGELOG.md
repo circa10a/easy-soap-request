@@ -1,12 +1,26 @@
+# 3.3.0(2020-04-25)
+
+## Added
+
+### Deno support
+
+- [#36] https://github.com/circa10a/easy-soap-request/issues/36)
+
+# 3.2.2(2020-04-08)
+
+## Updated
+
+Update dependencies
+
 # 3.2.1 (2020-03-13)
 
-## Fixed 
+## Fixed
 
 - [#32] (https://github.com/circa10a/easy-soap-request/pull/32)
 
 # 3.2.0 (2019-10-19)
 
-## Fixed 
+## Fixed
 
 - [#29] (https://github.com/circa10a/easy-soap-request/issues/29)
 

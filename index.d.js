@@ -1,4 +1,5 @@
 /**
+ * Deno module for easy-soap-request
  * @author Caleb Lemoine
  * @param {object} opts easy-soap-request options
  * @param {string} opts.url endpoint URL
