@@ -1,3 +1,7 @@
+# 3.3.1(2020-04-26)
+
+Update docs to point to deno.land for easy-soap-request deno module instead of github
+
 # 3.3.0(2020-04-25)
 
 ## Added

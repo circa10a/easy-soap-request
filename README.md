@@ -52,7 +52,7 @@ const xml = fs.readFileSync('test/zip-code-envelope.xml', 'utf-8');
 ### Deno
 
 ```js
-import soapRequest from 'https://raw.githubusercontent.com/circa10a/easy-soap-request/master/index.d.js';
+import soapRequest from 'https://deno.land/x/easy_soap_request/index.d.js';
 import { readFileStr } from 'https://deno.land/std/fs/mod.ts';
 
 // example data
