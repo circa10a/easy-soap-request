@@ -1,3 +1,7 @@
+# 4.0.0(2020-06-01)
+
+Reject `error.response` instead of `error.response.data`
+
 # 3.3.1(2020-04-26)
 
 Update docs to point to deno.land for easy-soap-request deno module instead of github
