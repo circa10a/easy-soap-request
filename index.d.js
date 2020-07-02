@@ -25,7 +25,7 @@ export default function soapRequest(opts = {
   } = opts;
   return new Promise((resolve, reject) => {
     fetch(url, {
-      method: 'post',
+      method: 'POST',
       headers,
       body: xml,
       ...extraOpts,
