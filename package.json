@@ -1,6 +1,6 @@
 {
   "name": "easy-soap-request",
-  "version": "3.3.1",
+  "version": "3.3.2",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "lint-fix": "eslint . --fix",
     "serve": "npm run bundle && webpack-dev-server --config ./webpack.config.js",
     "test": "nyc mocha **/*test.js",
-    "test-deno": "docker run --rm -it -v $PWD:/tmp -w /tmp hayd/alpine-deno test --allow-read --allow-net test/*.d.js"
+    "test-deno": "docker run --rm -it -v $PWD:/tmp -w /tmp hayd/alpine-deno test --unstable --allow-read --allow-net test/*.d.js"
   },
   "repository": {
     "type": "git",
