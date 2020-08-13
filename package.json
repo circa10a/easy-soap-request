@@ -1,6 +1,6 @@
 {
   "name": "easy-soap-request",
-  "version": "3.3.2",
+  "version": "3.3.3",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
@@ -48,6 +48,6 @@
     "nyc": "^15.0.1",
     "webpack": "^4.42.1",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.0"
   }
 }
