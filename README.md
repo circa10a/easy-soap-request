@@ -53,7 +53,6 @@ const xml = fs.readFileSync('test/zip-code-envelope.xml', 'utf-8');
 
 ```js
 import soapRequest from 'https://deno.land/x/easy_soap_request/index.d.js';
-import { readFileStr } from 'https://deno.land/std/fs/mod.ts';
 
 // example data
 const url = 'https://graphical.weather.gov/xml/SOAP_server/ndfdXMLserver.php';
@@ -65,7 +64,7 @@ const sampleHeaders = {
 
 // usage of module
 (async () => {
-  const xml = await readFileStr('test/zip-code-envelope.xml');
+  const xml = await Deno.readFile('test/zip-code-envelope.xml');
   const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml });
   const { headers, body, statusCode } = response;
   console.log(headers);
