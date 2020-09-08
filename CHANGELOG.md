@@ -1,3 +1,7 @@
+# 3.4.0(2020-09-08)
+
+Update to axios v0.20
+
 # 3.3.3(2020-08-12)
 
 Update deps, fix deno tests again.
