@@ -1,6 +1,6 @@
 {
   "name": "easy-soap-request",
-  "version": "3.4.0",
+  "version": "3.5.0",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
   "scripts": {
@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/circa10a/easy-soap-request#readme",
   "dependencies": {
-    "axios": "^0.20.0"
+    "axios": "^0.21.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
@@ -46,8 +46,8 @@
     "eslint-plugin-mocha": "^8.0.0",
     "mocha": "^8.1.1",
     "nyc": "^15.0.1",
-    "webpack": "^4.42.1",
-    "webpack-cli": "^3.3.11",
+    "webpack": "^5.3.2",
+    "webpack-cli": "^4.1.0",
     "webpack-dev-server": "^3.11.0"
   }
 }

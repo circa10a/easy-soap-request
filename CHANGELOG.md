@@ -1,3 +1,8 @@
+# 3.5.0(2020-11-01)
+
+- Update to axios v0.21
+- Update webpack to v5
+
 # 3.4.0(2020-09-08)
 
 Update to axios v0.20
