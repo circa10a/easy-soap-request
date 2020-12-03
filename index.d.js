@@ -39,10 +39,8 @@ export default function soapRequest(opts = {
       });
     }).catch(async (error) => {
       if (error.response) {
-        console.error(`SOAP FAIL: ${error}`);
         reject(await error.response.text());
       } else {
-        console.error(`SOAP FAIL: ${error}`);
         reject(error);
       }
     });
