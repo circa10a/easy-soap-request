@@ -1,3 +1,7 @@
+# 4.1.0(2020-12-08)
+
+- Default `maxBodyLength` to `Infinity`
+
 # 4.0.1(2020-12-03)
 
 - Remove logging from deno module

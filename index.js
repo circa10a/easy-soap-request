@@ -22,6 +22,7 @@ module.exports = function soapRequest(opts = {
   timeout: 10000,
   proxy: {},
   maxContentLength: Infinity,
+  maxBodyLength: Infinity,
   extraOpts: {},
 }) {
   const {
