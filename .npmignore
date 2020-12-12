@@ -12,6 +12,7 @@ coverage
 .travis.yml
 .jenkins.yml
 .codeclimate.yml
+.github/
 
 #linters
 .jscsrc

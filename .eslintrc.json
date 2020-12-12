@@ -8,7 +8,10 @@
     "sourceType": "module",
     "ecmaVersion": 9
   },
-  "ignorePatterns": ["**/*.d.js"],
+  "ignorePatterns": [
+    "**/*.d.js",
+    "node_modules/**/*"
+  ],
   "rules": {
     "quote-props": "warn"
   },
