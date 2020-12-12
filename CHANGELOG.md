@@ -1,6 +1,6 @@
-# 4.1.0(2020-12-08)
+# 4.1.1(2020-12-11)
 
-- Default `maxBodyLength` to `Infinity`
+- Switch to github actions
 
 # 4.0.1(2020-12-03)
 
