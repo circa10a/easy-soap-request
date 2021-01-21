@@ -1,3 +1,7 @@
+# 4.1.2(2021-01-05)
+
+- Update axios to v0.21.1
+
 # 4.1.1(2020-12-11)
 
 - Switch to github actions
