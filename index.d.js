@@ -2,6 +2,7 @@
  * Deno module for easy-soap-request
  * @author Caleb Lemoine
  * @param {object} opts easy-soap-request options
+ * @param {string} opts.method HTTP request method
  * @param {string} opts.url endpoint URL
  * @param {object} opts.headers  HTTP headers, can be string or object
  * @param {string} opts.xml SOAP envelope, can be read from file or passed as string
@@ -12,12 +13,14 @@
  * @returns {Promise.response{body,statusCode}}
  */
 export default function soapRequest(opts = {
+  method: 'POST',
   url: '',
   headers: {},
   xml: '',
   extraOpts: {},
 }) {
   const {
+    method,
     url,
     headers,
     xml,
@@ -25,7 +28,7 @@ export default function soapRequest(opts = {
   } = opts;
   return new Promise((resolve, reject) => {
     fetch(url, {
-      method: 'POST',
+      method: method || 'POST',
       headers,
       body: xml,
       ...extraOpts,

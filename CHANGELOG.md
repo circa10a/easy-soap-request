@@ -1,3 +1,7 @@
+# 4.1.3(2021-03-17)
+
+- Support overriding http method
+
 # 4.1.2(2021-01-05)
 
 - Update axios to v0.21.1
