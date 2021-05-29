@@ -39,6 +39,10 @@ module.exports = function soapRequest(opts = {
     maxContentLength,
     extraOpts,
   } = opts;
+
+  const foo = process.env.foo
+  console.log({ foo })
+
   return new Promise((resolve, reject) => {
     axios({
       method: method || 'POST',
