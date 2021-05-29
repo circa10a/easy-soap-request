@@ -40,7 +40,8 @@ module.exports = function soapRequest(opts = {
     extraOpts,
   } = opts;
 
-  const foo = process.env.foo
+  const foo = process.env.foo;
+  // eslint-disable-next-line no-console
   console.log({ foo })
 
   return new Promise((resolve, reject) => {
