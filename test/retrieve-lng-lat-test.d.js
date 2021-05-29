@@ -28,7 +28,7 @@ Deno.test({
   fn: async () => {
     try {
       const foo = process.env.foo
-      console.log({foo})
+      console.log({ foo })
       const xmlFail = await Deno.readFile('test/zip-code-envelope-fail.xml');
       const { response } = await soapRequest({ url, headers, xmlFail });
       const { statusCode } = response;
