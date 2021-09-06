@@ -1,3 +1,7 @@
+# 4.2.0(2021-09-06)
+
+- Update Axios vesion 0.21.3
+
 # 4.1.3(2021-03-17)
 
 - Support overriding http method
