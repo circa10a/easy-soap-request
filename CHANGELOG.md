@@ -1,3 +1,7 @@
+# 4.3.0(2021-10-10)
+
+- Update Axios vesion 0.22.0
+
 # 4.2.0(2021-09-06)
 
 - Update Axios vesion 0.21.3
