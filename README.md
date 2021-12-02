@@ -14,9 +14,6 @@ A small library to make SOAP requests easier via Node.js, Deno, and your browser
 npm install easy-soap-request
 ```
 
-## Requirements
-  - Node.js >=7.6.0 (async/await support)
-
 ## Usage
 
 ### Node.js
