@@ -1,3 +1,7 @@
+# 4.6.0(2022-01-18)
+
+- Update Axios vesion 0.25.0
+
 # 4.5.0(2021-12-01)
 
 - Update Axios vesion 0.24.0
@@ -113,7 +117,12 @@ const { response } = await soapRequest(url, headers, xml, 1000);
 **New format of input parameters:**
 
 ```javascript
-const { response } = await soapRequest({ url: url, headers: headers, xml: xml, timeout: 1000 });
+const { response } = await soapRequest({
+  url: url,
+  headers: headers,
+  xml: xml,
+  timeout: 1000,
+});
 ```
 
 ## Updated
