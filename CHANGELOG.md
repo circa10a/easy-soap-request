@@ -1,3 +1,7 @@
+# 4.7.0(2022-03-17)
+
+- Update Axios vesion 0.26.1
+
 # 4.6.0(2022-01-18)
 
 - Update Axios vesion 0.25.0
