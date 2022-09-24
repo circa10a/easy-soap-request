@@ -59,11 +59,7 @@ module.exports = function soapRequest(opts = {
         },
       });
     }).catch((error) => {
-      if (error.response) {
-        reject(error.response.data);
-      } else {
-        reject(error);
-      }
+      reject(error);
     });
   });
 };

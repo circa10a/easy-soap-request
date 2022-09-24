@@ -41,11 +41,7 @@ export default function soapRequest(opts = {
         },
       });
     }).catch(async (error) => {
-      if (error.response) {
-        reject(await error.response.text());
-      } else {
-        reject(error);
-      }
+      reject(error);
     });
   });
 }

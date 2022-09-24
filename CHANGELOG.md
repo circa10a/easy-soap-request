@@ -1,3 +1,7 @@
+# 5.0.0(2022-09-24)
+
+- Breaking change: Reject entire error object from axios instead of just `error.response.data`
+
 # 4.8.0(2022-07-10)
 
 - Update Axios vesion 0.27.2
