@@ -1,3 +1,7 @@
+# 5.1.0(2022-10-08)
+
+- Update axios to stable 1.1.2
+
 # 5.0.0(2022-09-24)
 
 - Breaking change: Reject entire error object from axios instead of just `error.response.data`
