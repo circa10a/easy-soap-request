@@ -1,3 +1,7 @@
+# 5.2.0(2022-11-02)
+
+- Remove Promise wrapper 
+
 # 5.1.0(2022-10-08)
 
 - Update axios to stable 1.1.2
