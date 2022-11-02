@@ -39,27 +39,21 @@ module.exports = function soapRequest(opts = {
     maxContentLength,
     extraOpts,
   } = opts;
-  return new Promise((resolve, reject) => {
-    axios({
-      method: method || 'POST',
-      url,
-      headers,
-      data: xml,
-      timeout,
-      proxy,
-      maxBodyLength,
-      maxContentLength,
-      ...extraOpts,
-    }).then((response) => {
-      resolve({
-        response: {
-          headers: response.headers,
-          body: response.data,
-          statusCode: response.status,
-        },
-      });
-    }).catch((error) => {
-      reject(error);
-    });
-  });
+  return axios({
+    method: method || 'POST',
+    url,
+    headers,
+    data: xml,
+    timeout,
+    proxy,
+    maxBodyLength,
+    maxContentLength,
+    ...extraOpts,
+  }).then((response) => ({
+    response: {
+      headers: response.headers,
+      body: response.data,
+      statusCode: response.status,
+    },
+  }));
 };
