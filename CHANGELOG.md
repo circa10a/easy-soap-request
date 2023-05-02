@@ -1,6 +1,10 @@
+# 5.3.0(2023-05-01)
+
+- Update axios to stable 1.4.0
+
 # 5.2.0(2022-11-02)
 
-- Remove Promise wrapper 
+- Remove Promise wrapper
 
 # 5.1.0(2022-10-08)
 
