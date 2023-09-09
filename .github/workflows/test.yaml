@@ -7,14 +7,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - id: vars
-        run: |
-          echo ::set-output name=node_version::$(curl -s https://raw.githubusercontent.com/actions/node-versions/main/versions-manifest.json | grep -oE '"version": "[0-9]{1,}.[0-9]{1,}(.[0-9]{1,})?"' | head -1 | cut -d':' -f2 | sed 's/ //g; s/"//g')
+      - uses: actions/checkout@v4
       - name: Install Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ steps.vars.outputs.node_version }}
+        uses: actions/setup-node@v3
       - run: npm ci
       - run: npm run lint
       - run: npm test
