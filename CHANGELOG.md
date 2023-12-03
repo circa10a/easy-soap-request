@@ -1,3 +1,7 @@
+# 5.5.0(2023-09-09)
+
+- Update axios to 1.6.2
+
 # 5.4.0(2023-09-09)
 
 - Update axios to stable 1.4.0
