@@ -1,3 +1,7 @@
+# 5.6.1(2024-01-30)
+
+- Revert chai dependency from 5.X to 4.X
+
 # 5.6.0(2024-01-30)
 
 - Update axios to 1.6.7
