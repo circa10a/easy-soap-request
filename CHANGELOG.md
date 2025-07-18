@@ -1,3 +1,7 @@
+# 5.7.0(2025-07-18)
+
+- Update axios to 1.8.4
+
 # 5.6.1(2024-01-30)
 
 - Revert chai dependency from 5.X to 4.X
