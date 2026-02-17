@@ -1,0 +1,65 @@
+name: Update Axios
+
+on:
+  schedule:
+    - cron: '0 12 * * 1' # Every Monday at noon UTC
+  workflow_dispatch: # Allow manual trigger
+
+permissions:
+  contents: write
+
+jobs:
+  update-axios:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Check for axios update
+        id: check
+        run: |
+          npm ci
+          CURRENT=$(node -p "require('./package.json').dependencies.axios.replace('^', '')")
+          LATEST=$(npm view axios version)
+          echo "current=$CURRENT" >> "$GITHUB_OUTPUT"
+          echo "latest=$LATEST" >> "$GITHUB_OUTPUT"
+          if [ "$CURRENT" != "$LATEST" ]; then
+            echo "update_available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "update_available=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update axios
+        if: steps.check.outputs.update_available == 'true'
+        run: npm install axios@${{ steps.check.outputs.latest }}
+
+      - name: Bump package version
+        if: steps.check.outputs.update_available == 'true'
+        id: version
+        run: |
+          npm version minor --no-git-tag-version
+          NEW_VERSION=$(node -p "require('./package.json').version")
+          echo "new_version=$NEW_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Update changelog
+        if: steps.check.outputs.update_available == 'true'
+        run: |
+          DATE=$(date +%Y-%m-%d)
+          VERSION=${{ steps.version.outputs.new_version }}
+          AXIOS=${{ steps.check.outputs.latest }}
+          ENTRY="# ${VERSION}(${DATE})\n\n- Update axios to ${AXIOS}\n\n"
+          echo -e "${ENTRY}$(cat CHANGELOG.md)" > CHANGELOG.md
+
+      - name: Commit and push
+        if: steps.check.outputs.update_available == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add package.json package-lock.json CHANGELOG.md
+          git commit -m "Update axios version to ${{ steps.check.outputs.latest }}"
+          git push
