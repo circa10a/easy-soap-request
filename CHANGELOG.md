@@ -1,3 +1,9 @@
+# 5.9.0(2026-02-20)
+
+- Update dev dependencies
+- Update deprecated webpack config
+- Add types for Deno
+
 # 5.8.0(2026-02-17)
 
 - Update axios to 1.13.5

@@ -12,7 +12,7 @@
  * @fulfill {body,statusCode}
  * @returns {Promise.response{body,statusCode}}
  */
-export default function soapRequest(opts = {
+export default async function soapRequest(opts = {
   method: 'POST',
   url: '',
   headers: {},
@@ -26,22 +26,17 @@ export default function soapRequest(opts = {
     xml,
     extraOpts,
   } = opts;
-  return new Promise((resolve, reject) => {
-    fetch(url, {
-      method: method || 'POST',
-      headers,
-      body: xml,
-      ...extraOpts,
-    }).then(async (response) => {
-      resolve({
-        response: {
-          headers: response.headers,
-          body: await response.text(),
-          statusCode: response.status,
-        },
-      });
-    }).catch(async (error) => {
-      reject(error);
-    });
+  const response = await fetch(url, {
+    method: method || 'POST',
+    headers,
+    body: xml,
+    ...extraOpts,
   });
+  return {
+    response: {
+      headers: response.headers,
+      body: await response.text(),
+      statusCode: response.status,
+    },
+  };
 }
