@@ -55,14 +55,12 @@ const sampleHeaders = {
 };
 
 // usage of module
-(async () => {
-  const xml = await Deno.readFile('test/zip-code-envelope.xml');
-  const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml });
-  const { headers, body, statusCode } = response;
-  console.log(headers);
-  console.log(body);
-  console.log(statusCode);
-})();
+const xml = await Deno.readTextFile('test/zip-code-envelope.xml');
+const { response } = await soapRequest({ url: url, headers: sampleHeaders, xml: xml });
+const { headers, body, statusCode } = response;
+console.log(headers);
+console.log(body);
+console.log(statusCode);
 ```
 
 ### Browser

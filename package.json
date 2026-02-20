@@ -1,8 +1,9 @@
 {
   "name": "easy-soap-request",
-  "version": "5.8.0",
+  "version": "5.9.0",
   "description": "A small library to make SOAP requests easier",
   "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "bundle": "webpack --config ./webpack.config.js",
     "clean": "rm -rf node_modules/",
@@ -11,7 +12,7 @@
     "lint-fix": "eslint . --fix",
     "serve": "npm run bundle && webpack-dev-server --config ./webpack.config.js",
     "test": "nyc mocha **/*test.js",
-    "test-deno": "docker run --rm -it -v $PWD:/tmp -w /tmp hayd/alpine-deno test --unstable --allow-read --allow-net test/*.d.js"
+    "test-deno": "docker run --rm -it -v $PWD:/tmp -w /tmp denoland/deno test --allow-read --allow-net test/*.d.js"
   },
   "repository": {
     "type": "git",
@@ -34,18 +35,18 @@
     "axios": "^1.13.5"
   },
   "devDependencies": {
-    "chai": "^4.3.10",
+    "chai": "^4.5.0",
     "coveralls": "^3.1.1",
-    "eslint": "^8.56.0",
+    "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-chai-friendly": "^0.7.4",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-mocha": "^10.2.0",
-    "mocha": "^10.2.0",
-    "nock": "^13.5.1",
-    "nyc": "^15.1.0",
-    "webpack": "^5.90.0",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.2.2"
+    "eslint-plugin-chai-friendly": "^1.1.0",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-mocha": "^10.5.0",
+    "mocha": "^11.7.5",
+    "nock": "^13.5.6",
+    "nyc": "^17.1.0",
+    "webpack": "^5.105.2",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.3"
   }
 }

@@ -1,4 +1,4 @@
-import { assertEquals } from 'https://deno.land/std/testing/asserts.ts';
+import { assertEquals } from 'jsr:@std/assert';
 import soapRequest from '../index.d.js';
 
 
@@ -15,7 +15,7 @@ const coordinates = '32.9612,-96.8372';
 Deno.test({
   name: `Zip Code 75001 should return ${coordinates}`,
   fn: async () => {
-    const xml = await Deno.readFile('test/zip-code-envelope.xml');
+    const xml = await Deno.readTextFile('test/zip-code-envelope.xml');
     const { response } = await soapRequest({ url, headers, xml });
     const { body, statusCode } = response;
     assertEquals(body.includes(coordinates), true);
@@ -27,7 +27,7 @@ Deno.test({
   name: 'Should catch Promise Rejection',
   fn: async () => {
     try {
-      const xmlFail = await Deno.readFile('test/zip-code-envelope-fail.xml');
+      const xmlFail = await Deno.readTextFile('test/zip-code-envelope-fail.xml');
       const { response } = await soapRequest({ url, headers, xmlFail });
       const { statusCode } = response;
       assertEquals(statusCode, 200);
@@ -41,7 +41,7 @@ Deno.test({
   name: 'Should catch connection error Promise Rejection',
   fn: async () => {
     try {
-      const xmlFail = await Deno.readFile('test/zip-code-envelope-fail.xml');
+      const xmlFail = await Deno.readTextFile('test/zip-code-envelope-fail.xml');
       const { response } = await soapRequest({
         url: urlFail,
         headers,
