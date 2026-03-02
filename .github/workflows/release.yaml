@@ -3,6 +3,10 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["Update Axios"]
+    types:
+      - completed
 
 permissions:
   id-token: write  # Required for OIDC
@@ -12,21 +16,37 @@ jobs:
   tag:
     name: publish
     runs-on: ubuntu-latest
+    if: >
+      (github.event_name == 'push') ||
+      (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success')
     steps:
       - name: checkout
         uses: actions/checkout@v4
       - id: vars
         run: |
-          echo "pkg_json_version=$(grep -o '[0-9]\.[0-9]\.[0-9]' package.json | head -1)" >> "$GITHUB_OUTPUT"
+          echo "pkg_json_version=$(grep -oE '[0-9]+\.[0-9]+\.[0-9]+' package.json | head -1)" >> "$GITHUB_OUTPUT"
+      - name: Check if tag already exists
+        id: tag_check
+        run: |
+          if git ls-remote --tags origin | grep -q "refs/tags/v${{ steps.vars.outputs.pkg_json_version }}$"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
       - name: setup Node
+        if: steps.tag_check.outputs.exists == 'false'
         uses: actions/setup-node@v4
         with:
           node-version: '24'
           registry-url: https://registry.npmjs.org
-      - run: npm ci
-      - run: npm run bundle
-      - run: npm publish
+      - if: steps.tag_check.outputs.exists == 'false'
+        run: npm ci
+      - if: steps.tag_check.outputs.exists == 'false'
+        run: npm run bundle
+      - if: steps.tag_check.outputs.exists == 'false'
+        run: npm publish
       - name: Create Release
+        if: steps.tag_check.outputs.exists == 'false'
         uses: softprops/action-gh-release@v2
         with:
           tag_name: v${{ steps.vars.outputs.pkg_json_version }}

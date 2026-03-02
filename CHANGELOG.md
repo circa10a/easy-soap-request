@@ -1,3 +1,7 @@
+# 5.10.0(2026-03-02)
+
+- Update axios to 1.13.6
+
 # 5.9.0(2026-02-20)
 
 - Update dev dependencies
